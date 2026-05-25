@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Martina Miliksia Soge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(99, 102, 241, 0.25);
+      filter: blur(120px);
+      top: -150px;
+      left: -100px;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      background: rgba(236, 72, 153, 0.18);
+      filter: blur(120px);
+      bottom: -120px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #818cf8;
+    }
+
+    .hero-text p {
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      max-width: 550px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .secondary-btn {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: auto;
+      background: linear-gradient(135deg, #818cf8, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .profile-card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 100px 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #6366f1, #ec4899);
+      display: block;
+      margin: 15px auto 0;
+      border-radius: 10px;
+    }
+
+    .about-box,
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 30px;
+      backdrop-filter: blur(14px);
+      transition: 0.3s ease;
+    }
+
+    .card:hover,
+    .about-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #a5b4fc;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .skill {
+      padding: 12px 22px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      header {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Halo, Saya <span>Martina Miliksia Soge</span></h1>
+        <p>
+          Mahasiswa kreatif dan ambisius yang memiliki minat besar dalam dunia teknologi,
+          desain digital, dan pengembangan diri. Saya percaya bahwa kreativitas dan kerja keras
+          adalah kunci untuk menciptakan perubahan positif di masa depan.
+        </p>
+
+        <div class="btn-group">
+          <a href="#tentang" class="btn primary-btn">Tentang Saya</a>
+          <a href="#kontak" class="btn secondary-btn">Hubungi Saya</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="avatar">M</div>
+        <h2>Martina Miliksia Soge</h2>
+        <p>Mahasiswa • Content Creator • UI/UX Enthusiast</p>
+        <br>
+        <p>
+          "Membangun masa depan dengan ide kreatif dan semangat tanpa batas."
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section id="tentang">
+    <div class="container">
+      <h2 class="section-title">Tentang Saya</h2>
+      <div class="about-box">
+        <p>
+          Saya adalah mahasiswa aktif di salah satu universitas ternama di Indonesia dengan fokus pada bidang teknologi dan komunikasi digital.
+          Sejak awal perkuliahan, saya aktif mengikuti berbagai organisasi kampus, seminar nasional, dan proyek kreatif yang membantu meningkatkan kemampuan kepemimpinan serta kerja tim.
+          Saya dikenal sebagai pribadi yang disiplin, cepat belajar, dan mampu beradaptasi dengan lingkungan baru.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Pengalaman Kerja</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Digital Marketing Intern</h3>
+          <p>
+            Bekerja di perusahaan startup kreatif selama 6 bulan dengan tanggung jawab mengelola media sosial,
+            membuat strategi promosi digital, dan meningkatkan engagement audiens hingga 45%.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Freelance Graphic Designer</h3>
+          <p>
+            Membantu berbagai UMKM dalam membuat desain logo, poster promosi, dan branding visual yang modern serta profesional.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Asisten Event Kampus</h3>
+          <p>
+            Menjadi bagian dari tim pelaksana seminar nasional dan kegiatan mahasiswa dengan tugas koordinasi peserta dan publikasi acara.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Pencapaian & Karir</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Best Creative Student 2025</h3>
+          <p>
+            Mendapat penghargaan mahasiswa kreatif terbaik karena aktif menghasilkan proyek digital inovatif di lingkungan kampus.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Juara 1 Lomba Desain Nasional</h3>
+          <p>
+            Meraih juara pertama dalam kompetisi desain poster tingkat nasional yang diikuti oleh ratusan peserta dari berbagai universitas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Founder Creative Youth Project</h3>
+          <p>
+            Membentuk komunitas kreatif untuk membantu pelajar dan mahasiswa mengembangkan kemampuan desain, public speaking, dan digital branding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Keahlian</h2>
+      <div class="skills">
+        <div class="skill">Public Speaking</div>
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">Graphic Design</div>
+        <div class="skill">Leadership</div>
+        <div class="skill">Content Creation</div>
+        <div class="skill">Digital Marketing</div>
+        <div class="skill">Creative Thinking</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="container">
+      <h2 class="section-title">Kontak</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Email</h3>
+          <p>martina.creative@email.com</p>
+        </div>
+
+        <div class="card">
+          <h3>Instagram</h3>
+          <p>@martinamiliksia</p>
+        </div>
+
+        <div class="card">
+          <h3>Lokasi</h3>
+          <p>Jakarta, Indonesia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Martina Miliksia Soge • Portofolio Modern & Elegan</p>
+  </footer>
+
+</body>
+</html>
